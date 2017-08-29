@@ -25,8 +25,12 @@ sudo systemctl disable NetworkManager.service
 
 # Create SafeNetwork Script
 
+<<<<<<< HEAD
 mkdir ~/Desktop/NetworkScripts
 cp
+=======
+echo 
+>>>>>>> branch 'master' of https://github.com/thewasabiguy/KALI_SUCKS.git
 
 
 
