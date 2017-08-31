@@ -14,14 +14,22 @@ OPSEC
 PERSEC
 Scripting and git
 
+Version 1.0 will be made in BashScript
+Version 2.0 will be made in Python
+Version 3.0 ?
+
+Ansible Cookbook
+Docker Images
+
+
 #Configuration
 
 
 
-   SSH Config
+   - SSH Config
 
    BashRC
-        Aliases
+        - Aliases
 
    Network Configs
         serial connections
