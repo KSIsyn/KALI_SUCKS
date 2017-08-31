@@ -78,5 +78,5 @@ Scripting and git
    Software
    		Remove and add software
    		
-   		add needed software
-   		remove excess software
+   		 add needed software
+   		 remove excess software
