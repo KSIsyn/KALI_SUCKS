@@ -1,6 +1,7 @@
 # KALI_SUCKS
 This Repo was copied from https://github.com/thewasabiguy/INFOSECNIGHT-20170727-KALI-SUCKS.git
 This will be our style guide  https://github.com/bahamas10/bash-style-guide
+
 #OVERVIEW
 
 A working group was established at Unallocated Space (unallocatedspace.org) for INFOSEC NIGHT to teach people to not depend on the wild swiss army knife called Kali Linux.
