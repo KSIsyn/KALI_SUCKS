@@ -26,6 +26,34 @@
 #Tool Removal
 
 ##########################################
+# Am I being run standalone or was the entire repo cloned?
+##########################################
+
+RequiredFiles="dependencies.sh functions.sh networking.sh"
+
+for file in $RequiredFiles; do
+    if [ ! -e "$file" ]; then
+        printf "\e[0;31m $file is missing.  Make sure you cloned the entire repo ... \e[0m\n" >&2
+        exit 1
+    fi
+done
+
+##########################################
+# Sourcing common functions and aliases
+##########################################
+
+source functions.sh
+
+###########################################################
+# Make sure all dependencies are installed.                
+# These should be basic dependencis required by everything.
+###########################################################
+
+source dependencies.sh
+
+##########################################
+
+##########################################
 #Network Config
 #This section wil configure the Network Manager and other areas so that when the system is booted all netwoking is turned off.
 #This wil also place shortcuts on the Desktop for differnt network scenerios that can be encountered.
