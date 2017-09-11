@@ -48,7 +48,7 @@ permalias lsl="ls -lhFA | less"
 ##########################################
 #list all items recurrsivly and pipe to less
 ##########################################
-permalias lh="ls -lhA --color=auto | less"
+permalias lr="ls -lhAR --color=auto | less"
 
 ##########################################
 #get systeminfo details
