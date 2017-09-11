@@ -34,3 +34,24 @@ function permalias ()
 #quick change to parent directory
 ##########################################
 permalias ..="cd .."
+
+##########################################
+#list all items
+##########################################
+permalias lh="ls -lhA --color=auto"
+
+##########################################
+#list all items and pass to less for large directory listings
+##########################################
+permalias lsl="ls -lhFA | less"
+
+##########################################
+#list all items recurrsivly and pipe to less
+##########################################
+permalias lh="ls -lhA --color=auto | less"
+
+##########################################
+#get systeminfo details
+##########################################
+permalias ver="uname -srv"
+permalias sysinfo="uname -a"
