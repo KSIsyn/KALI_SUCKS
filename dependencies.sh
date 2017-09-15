@@ -14,8 +14,12 @@ if ! id | grep -E -q "sudo|^uid...root"; then
 fi
 
 # Make sure we are running Ubuntu 16.04 (first supported distro)
-if ! lsb_release -a 2>/dev/null | grep -E -q "^Release.*16.04$"; then
-    printf "$red This script is currently only supported on Ubuntu 16.04 LTS. $nc\n"
+if lsb_release -a 2>/dev/null | grep -E -q "^Release.*16.04$"; then
+    printf "$green Detected Ubuntu 16.04 $nc\n"
+    sleep 1
+    export DISTRIBUTION=ubuntu
+else
+    printf "$red Did not detect a supported release. $nc\n"
     exit 1
 fi
 
@@ -42,17 +46,17 @@ fi
 # This will install some X dependencies early ... not sure if this should be chagned -- meatbunny
 export VIRTTYPE="$(sudo virt-what | head -1)"
 # This will install some X dependencies early ... not sure if this should be chagned -- meatbunny
-if [ $VIRTTYPE = "" ]; then
+if [[ $VIRTTYPE = "" ]]; then
     printf "$green Detected bare metal ... $nc \n"
     export VIRTTYPE=bare
-elif [ $VIRTTYPE = "virtualbox" ]; then
+elif [[ $VIRTTYPE = "virtualbox" ]]; then
     printf "$green Installing for VirtualBox ... $nc\n"
     sleep 1
-    sudo apt-get install -y virtualbox-guest-x11
-elif [ $VIRTTYPE = "vmware" ]; then
+    sudo apt-get install -y virtualbox-guest-x11 virtualbox-guest-dkms
+elif [[ $VIRTTYPE = "vmware" ]]; then
     printf "$green Installing for VMWare ... $nc\n"
     sleep 1
-    sudo apt-get install -y open-vm-tools-desktop
+    sudo apt-get install -y open-vm-tools*
 else
     printf "$yellow Looks like you're using $VIRTTYPE ... not making any adjustments. $nc\n"
 fi

@@ -29,7 +29,7 @@
 # Am I being run standalone or was the entire repo cloned?
 ##########################################
 
-RequiredFiles="dependencies.sh functions.sh networking.sh"
+RequiredFiles="dependencies.sh functions.sh networking.sh desktops.sh"
 
 for file in $RequiredFiles; do
     if [ ! -e "$file" ]; then
@@ -50,6 +50,12 @@ source functions.sh
 ###########################################################
 
 source dependencies.sh
+
+####################################
+# Install a user selected desktop. #               
+####################################
+
+source desktops.sh
 
 ##########################################
 
